@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+</body>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+
+var data = [1,2,3,4,5];
+
+d3.select('body').selectAll('div')
+    .data(data)
+    .enter()
+    .append('div')
+    .text(function(d){
+        return d;
+    }).attr('class',function(d){
+        return d > 3 ? 'red' : ''
+    });
+
+</script>
